@@ -20,5 +20,8 @@
     "esbuild": "^0.21.1",
     "istextorbinary": "^9.5.0",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   }
 }

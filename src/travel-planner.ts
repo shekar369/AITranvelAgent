@@ -1,18 +1,20 @@
+import * as dotenv from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // To use the Gemini API, you need to set up an API key.
-// 1. Go to https://aistudio.google.com/app/apikey to obtain your API key.
-// 2. Set the API key as an environment variable named `GOOGLE_API_KEY`.
-//    You can do this in your terminal before running the script:
-//    `export GOOGLE_API_KEY="YOUR_ACTUAL_API_KEY"`
-//    Alternatively, you can use a tool like `dotenv` to manage environment variables.
+// 1. Create a `.env` file in the project root.
+// 2. Add your API key to the `.env` file as:
+//    GOOGLE_API_KEY=YOUR_ACTUAL_API_KEY
+// 3. Obtain your API key from https://aistudio.google.com/app/apikey.
+
+dotenv.config();
 
 let genAI: GoogleGenerativeAI;
 
 function ensureApiKey(): void {
   if (!process.env.GOOGLE_API_KEY) {
     throw new Error(
-      "GOOGLE_API_KEY environment variable not set. Please follow the instructions in the code comments to set it up."
+      "GOOGLE_API_KEY not found in .env file. Please create a .env file in the project root and add your API key as GOOGLE_API_KEY=YOUR_ACTUAL_API_KEY"
     );
   }
   if (!genAI) {

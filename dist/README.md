@@ -1,1 +1,0 @@
-Reminder: You must commit the dist directory for this GitHub action to work!
